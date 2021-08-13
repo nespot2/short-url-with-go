@@ -177,7 +177,7 @@ func decode(url string) uint64 {
 
 	for _, char := range url {
 		digit := uint64(strings.Index(base62, string(char)))
-		result = digit * power
+		result += digit * power
 		power *= 62
 	}
 	return result
